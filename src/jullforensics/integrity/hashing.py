@@ -8,7 +8,7 @@ from __future__ import annotations
 import hashlib
 from collections.abc import Iterable
 from pathlib import Path
-from typing import BinaryIO
+from typing import IO, BinaryIO
 
 CHUNK_SIZE = 1024 * 1024  # 1 MiB
 DEFAULT_ALGOS: tuple[str, ...] = ("sha256", "sha512")
@@ -61,8 +61,8 @@ def hash_file(path: Path | str, algos: Iterable[str] = DEFAULT_ALGOS) -> dict[st
 
 
 def tee_stream(
-    src: BinaryIO,
-    dst: BinaryIO,
+    src: BinaryIO | IO[bytes],
+    dst: BinaryIO | IO[bytes],
     hasher: MultiHasher,
     chunk_size: int = CHUNK_SIZE,
 ) -> int:
