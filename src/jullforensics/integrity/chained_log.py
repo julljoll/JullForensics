@@ -65,9 +65,9 @@ class ChainedLog:
         self,
         path: Path | str,
         key: bytes,
-        genesis_hash: str,
-        case_id: str,
-        examiner: str,
+        genesis_hash: str = "0" * 64,
+        case_id: str = "CASE",
+        examiner: str = "EXAMINER",
     ) -> None:
         self.path = Path(path)
         self._key = key
@@ -106,8 +106,20 @@ class ChainedLog:
         return self._seq
 
     @property
+    def entry_count(self) -> int:
+        return self._seq
+
+    @property
     def last_hash(self) -> str:
         return self._prev_hash
+
+    @property
+    def head_hash(self) -> str:
+        return self._prev_hash
+
+    @property
+    def log_path(self) -> Path:
+        return self.path
 
     def append(self, event: str, module: str, data: dict[str, Any]) -> LogEntry:
         """Registra un nuevo evento en el archivo de log forzando fsync a disco."""

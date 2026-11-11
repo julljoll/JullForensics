@@ -7,6 +7,8 @@ from enum import StrEnum
 
 from pydantic import BaseModel, Field
 
+from jullforensics.domain.custody import CustodyEvent
+
 
 class LegalBasisType(StrEnum):
     ORDEN_JUDICIAL = "ORDEN_JUDICIAL"
@@ -66,3 +68,4 @@ class Case(BaseModel):
         )
     )
     status: CaseStatus = CaseStatus.OPEN
+    chain_of_custody: list[CustodyEvent] = Field(default_factory=list)

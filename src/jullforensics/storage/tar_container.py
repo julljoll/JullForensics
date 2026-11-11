@@ -163,6 +163,12 @@ def create_forensic_tar(
         sidecar_sha512.write_text(f"{tar_digests['sha512']}  {base_name}.tar\n", encoding="utf-8")
         sidecar_sha512.chmod(0o440)
 
+    if private_key:
+        tar_sig = Signer.sign_bytes(private_key, final_tar_path.read_bytes())
+        sidecar_sig = out_dir / f"{base_name}.tar.sig"
+        sidecar_sig.write_bytes(tar_sig)
+        sidecar_sig.chmod(0o440)
+
     # Re-verificación leyendo desde el disco
     disk_digests = hash_file(final_tar_path, algos)
     if disk_digests["sha256"] != tar_digests["sha256"]:
