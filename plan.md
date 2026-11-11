@@ -122,10 +122,19 @@ Para dar por concluido el proyecto y proceder al despliegue:
 
 ---
 
-## 5. Próximo Paso Inmediato para Iniciar la Construcción
+## 5. Estado de Ejecución y Entrega (100% COMPLETADO)
 
-Para iniciar formalmente la construcción del código:
-1. **Comenzar con la Etapa 0 y Etapa 1:**
-   - Crear la estructura de directorios modular `src/jullforensics/` y `tests/`.
-   - Crear el archivo `pyproject.toml` con las dependencias exactas y configuraciones de linters/formatters.
-   - Implementar el módulo `integrity/hashing.py` y `integrity/chained_log.py` con su suite de pruebas unitarias (`pytest`).
+Todos los hitos planificados han sido desarrollados, validados y desplegados en el repositorio:
+
+- **Hito 1 (Core Criptográfico y ADB Seguro):** Completado. MultiHasher (SHA-256/512), ChainedLog HMAC, Signer/Verifier Ed25519, AdbRunner con lista blanca estricta, CLI `jullforensics-verify`. (Commit `0884915`).
+- **Hito 2 (Adquisición Lógica y Almacenamiento Forense):** Completado. Modelos Pydantic V2, EvidenceStore con permisos `0750`/`0440`, empaquetador POSIX PAX TAR con sidecars, DeviceMonitor reactivo y 7 módulos de adquisición. (Commit `a01a4c6`).
+- **Hito 3 (Orquestación Pericial y Reportes Judiciales):** Completado. AcquisitionService bajo orden de volatilidad RFC 3227, generadores de dictámenes periciales tripartitos (JSON ISO 27050, HTML brutalista y PDF ReportLab con numeración canónica). (Commit `3c7346f`).
+- **Hito 4 (Interfaz Brutalista Kali Linux):** Completado. Aplicación de escritorio PySide6, paleta brutalista WCAG 2.2 AA, 7 vistas funcionales, atajos globales de teclado (`Alt+1..7`, `F12`), integración asíncrona no bloqueante. (Commit `a878e0d`).
+- **Hito 5 (Validación ISO 27041, Empaquetado Kali Linux y Release):** Completado.
+  - Dictamen pericial de validación empírica: `docs/validacion/VAL-1.0.0.md`.
+  - Paquete Debian para Kali Linux: `packaging/debian/` (`control`, `rules`, `changelog`, `copyright`, `install`, `jullforensics.desktop`).
+  - CycloneDX SBOM: `docs/seguridad/sbom-v0.1.0.json`.
+  - Informe de Auditoría SAST: `docs/seguridad/sast_report.md` (0 Críticas, 0 Altas, 0 Medias).
+  - Cobertura de pruebas alcanzada: **87.12%** (100 tests pasando exitosamente).
+  - Release y Tag oficial: **`v0.1.0`** (Commit `50d3f08`).
+
