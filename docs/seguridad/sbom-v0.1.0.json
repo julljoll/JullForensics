@@ -1,0 +1,130 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:836697cb-73b6-4920-a241-fe01e816e392",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-11-11T20:19:10.870052+00:00",
+    "tools": [
+      {
+        "vendor": "JullForensics",
+        "name": "JullForensics SBOM Generator",
+        "version": "0.1.0"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "name": "jullforensics",
+      "version": "0.1.0",
+      "description": "Android Logical Forensic Acquisition Application for Kali Linux",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:pypi/jullforensics@0.1.0"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "annotated-types",
+      "version": "0.8.0",
+      "purl": "pkg:pypi/annotated-types@0.8.0",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "bandit",
+      "version": "1.9.4",
+      "purl": "pkg:pypi/bandit@1.9.4",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "cffi",
+      "version": "2.1.1",
+      "purl": "pkg:pypi/cffi@2.1.1",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "cryptography",
+      "version": "50.0.2",
+      "purl": "pkg:pypi/cryptography@50.0.2",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "jinja2",
+      "version": "3.1.6",
+      "purl": "pkg:pypi/jinja2@3.1.6",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "markupsafe",
+      "version": "3.0.4",
+      "purl": "pkg:pypi/markupsafe@3.0.4",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "mypy",
+      "version": "2.4.1",
+      "purl": "pkg:pypi/mypy@2.4.1",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "pydantic",
+      "version": "2.14.3",
+      "purl": "pkg:pypi/pydantic@2.14.3",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "pydantic-core",
+      "version": "2.50.4",
+      "purl": "pkg:pypi/pydantic-core@2.50.4",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "pyside6",
+      "version": "6.12.0",
+      "purl": "pkg:pypi/pyside6@6.12.0",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "pyside6-essentials",
+      "version": "6.12.0",
+      "purl": "pkg:pypi/pyside6-essentials@6.12.0",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "pytest",
+      "version": "9.2.0",
+      "purl": "pkg:pypi/pytest@9.2.0",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "reportlab",
+      "version": "5.1.0",
+      "purl": "pkg:pypi/reportlab@5.1.0",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "ruff",
+      "version": "0.17.4",
+      "purl": "pkg:pypi/ruff@0.17.4",
+      "scope": "required"
+    }
+  ]
+}

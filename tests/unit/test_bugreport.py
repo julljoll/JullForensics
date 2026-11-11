@@ -39,12 +39,12 @@ def test_bugreport_module_success(tmp_path: Path) -> None:
     mod = BugreportModule()
     assert len(mod.precheck(ctx)) > 0
 
-    def mock_run(*args, **kwargs):
+    def mock_run(*args: object, **kwargs: object) -> MagicMock:
         if "bugreportz" in args:
             return MagicMock(returncode=0, stdout=b"OK:/data/user_de/0/bugreport.zip\n")
         elif "pull" in args:
             # Crear archivo simulado descargado
-            dest = Path(args[3])
+            dest = Path(str(args[3]))
             dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_bytes(b"PK\x03\x04DUMMY_ZIP_CONTENT")
             return MagicMock(returncode=0, stdout=b"")

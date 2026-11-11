@@ -81,9 +81,9 @@ def test_system_dumps_module(acq_context: AcquisitionContext) -> None:
 
 def test_content_providers_module(acq_context: AcquisitionContext) -> None:
     mod = ContentProvidersModule()
-    acq_context.runner.run = MagicMock(
+    acq_context.runner.run = MagicMock(  # type: ignore[method-assign]
         return_value=MagicMock(returncode=0, stdout=b"Row 0: name=John", stderr=b"")
-    )  # type: ignore[method-assign]
+    )
 
     res = mod.acquire(acq_context)
     assert res.status == ModuleStatus.OK
@@ -95,7 +95,7 @@ def test_shared_storage_module_strategy_b(acq_context: AcquisitionContext) -> No
     # Mock no toybox tar -> fallback to Strategy B
     mod._supports_strategy_a = MagicMock(return_value=False)  # type: ignore[method-assign]
 
-    def mock_run(*args, **kwargs):
+    def mock_run(*args: object, **kwargs: object) -> MagicMock:
         if "find" in args:
             return MagicMock(returncode=0, stdout=b"/sdcard/DCIM/photo.jpg\n")
         elif "cat" in args:

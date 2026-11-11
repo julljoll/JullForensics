@@ -1,0 +1,37 @@
+Source: jullforensics
+Section: utils
+Priority: optional
+Maintainer: JullForensics Core Team <security@jullforensics.local>
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               python3-all,
+               python3-setuptools,
+               python3-hatchling
+Standards-Version: 4.6.2
+Homepage: https://github.com/julljoll/JullForensics
+Rules-Requires-Root: no
+
+Package: jullforensics
+Architecture: all
+Depends: ${misc:Depends},
+         ${python3:Depends},
+         python3 (>= 3.11),
+         android-tools-adb | adb,
+         python3-pyside6,
+         python3-pydantic,
+         python3-cryptography,
+         python3-jinja2,
+         python3-reportlab
+Description: Professional Android logical forensic acquisition tool for Kali Linux
+ JullForensics is an enterprise digital forensics solution adhering strictly
+ to ISO/IEC 27037, ISO/IEC 27041, ISO/IEC 27042, ISO/IEC 27050, and
+ ISO/IEC 17025 standards.
+ .
+ Features include:
+  - 100% Python implementation with zero third-party Java/C# dependencies
+  - Real-time ADB device connection monitoring via push streaming
+  - In-RAM forensic screenshot capture with FLAG_SECURE detection
+  - POSIX PAX .tar container generation with dual SHA-256/SHA-512 streaming hashes
+  - Tamper-evident chained audit log with HMAC-SHA256 and Ed25519 digital signatures
+  - High-contrast brutalist desktop GUI (WCAG 2.2 AA compliant)
+  - Tripartite judicial reporting (PDF, HTML, JSON)

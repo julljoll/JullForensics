@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=JullForensics
+GenericName=Android Forensic Acquisition Tool
+Comment=ISO-compliant Android logical forensic acquisition tool for Kali Linux
+Exec=jullforensics
+Icon=utilities-terminal
+Terminal=false
+Categories=08-forensics;System;Security;Forensics;
+Keywords=forensic;android;adb;acquisition;evidence;iso27037;
+StartupNotify=true

@@ -26,7 +26,7 @@ class LegalBasis(BaseModel):
     authority: str = Field(..., min_length=2, description="Juzgado o fiscalía emisora")
     date_issued: str = Field(..., description="Fecha de emisión de la orden (YYYY-MM-DD)")
     document_hash_sha256: str | None = Field(
-        None, description="Hash SHA-256 del oficio/documento digital adjunto"
+        default=None, description="Hash SHA-256 del oficio/documento digital adjunto"
     )
     notes: str = ""
 
@@ -61,7 +61,7 @@ class Case(BaseModel):
     agency: str = Field(..., min_length=2, description="Organismo solicitante")
     examiner: Examiner
     legal_basis: LegalBasis
-    device_description: str = Field("", description="Descripción física del terminal")
+    device_description: str = Field(default="", description="Descripción física del terminal")
     created_at_utc: str = Field(
         default_factory=lambda: (
             datetime.now(UTC).isoformat(timespec="microseconds").replace("+00:00", "Z")

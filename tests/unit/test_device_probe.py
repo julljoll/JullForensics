@@ -26,7 +26,7 @@ def test_device_probe_identify() -> None:
     runner = AdbRunner(serial="R58W123ABC")
     probe = DeviceProbe(runner)
 
-    def mock_run(*args, **kwargs):
+    def mock_run(*args: object, **kwargs: object) -> MagicMock:
         if "getprop" in args:
             output = (
                 b"[ro.product.model]: [Pixel 8]\n"
