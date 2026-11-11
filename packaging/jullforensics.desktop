@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=JullForensics
+Comment=Extracción Lógica Forense de Android (ISO/IEC 27037)
+Exec=/usr/bin/jullforensics
+Icon=utilities-terminal
+Terminal=false
+Type=Application
+Categories=Utility;Security;Forensics;
+Keywords=forensics;android;adb;acquisition;evidence;tar;
+StartupNotify=true

@@ -1,0 +1,42 @@
+# 51-android-forensics.rules
+# Reglas udev para permitir la comunicación ADB sin privilegios de superusuario (root)
+# Asigna permisos de lectura y escritura al grupo "plugdev"
+
+# Google (Pixel, Nexus, emuladores)
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0660", GROUP="plugdev"
+
+# Samsung
+SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0660", GROUP="plugdev"
+
+# Xiaomi / Redmi / POCO
+SUBSYSTEM=="usb", ATTR{idVendor}=="2717", MODE="0660", GROUP="plugdev"
+
+# Huawei / Honor
+SUBSYSTEM=="usb", ATTR{idVendor}=="12d1", MODE="0660", GROUP="plugdev"
+
+# Motorola
+SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", MODE="0660", GROUP="plugdev"
+
+# LG
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", MODE="0660", GROUP="plugdev"
+
+# Sony
+SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", MODE="0660", GROUP="plugdev"
+
+# OnePlus / Oppo
+SUBSYSTEM=="usb", ATTR{idVendor}=="2a70", MODE="0660", GROUP="plugdev"
+
+# ASUS
+SUBSYSTEM=="usb", ATTR{idVendor}=="0b05", MODE="0660", GROUP="plugdev"
+
+# HTC
+SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", MODE="0660", GROUP="plugdev"
+
+# Lenovo
+SUBSYSTEM=="usb", ATTR{idVendor}=="17ef", MODE="0660", GROUP="plugdev"
+
+# ZTE
+SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", MODE="0660", GROUP="plugdev"
+
+# MediaTek Preloader / Devices
+SUBSYSTEM=="usb", ATTR{idVendor}=="0e8d", MODE="0660", GROUP="plugdev"
