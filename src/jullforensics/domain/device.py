@@ -9,14 +9,14 @@ class DeviceInfo(BaseModel):
     """Metadatos técnicos y propiedades forenses del dispositivo Android conectado."""
 
     serial: str = Field(..., min_length=1)
-    model: str = Field("Desconocido")
-    manufacturer: str = Field("Desconocido")
-    brand: str = Field("Desconocido")
-    android_version: str = Field("Desconocido")
-    sdk_version: int = Field(0)
-    security_patch: str = Field("Desconocido")
-    build_fingerprint: str = Field("Desconocido")
-    build_id: str = Field("Desconocido")
+    model: str = "Desconocido"
+    manufacturer: str = "Desconocido"
+    brand: str = "Desconocido"
+    android_version: str = "Desconocido"
+    sdk_version: int = 0
+    security_patch: str = "Desconocido"
+    build_fingerprint: str = "Desconocido"
+    build_id: str = "Desconocido"
     battery_level_percent: int | None = None
     clock_offset_seconds: float = 0.0
     encryption_state: str = "Desconocido"

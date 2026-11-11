@@ -16,7 +16,7 @@ def generate_salt(length: int = 16) -> bytes:
     return os.urandom(length)
 
 
-def derive_case_key(passphrase: str, salt: bytes, length: int = 32) -> bytes:
+def derive_case_key(passphrase: str | bytes, salt: bytes, length: int = 32) -> bytes:
     """Deriva una clave de 256 bits mediante scrypt para HMAC o cifrado simétrico.
 
     Parámetros endurecidos:
@@ -29,8 +29,10 @@ def derive_case_key(passphrase: str, salt: bytes, length: int = 32) -> bytes:
     if len(salt) < 16:
         raise ValueError("La sal debe tener al menos 16 bytes.")
 
+    pw_bytes = passphrase.encode("utf-8") if isinstance(passphrase, str) else bytes(passphrase)
+
     return hashlib.scrypt(
-        passphrase.encode("utf-8"),
+        pw_bytes,
         salt=salt,
         n=32768,
         r=8,
